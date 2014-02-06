@@ -21,7 +21,7 @@ class CreateTableUsers extends Migration {
             $table->string('password', 64);
             $table->timestamps();
             $table->softDeletes();
-            $table->timestamp('last_login_at')->nullable()->default(null);
+            $table->dateTime('last_login_at')->nullable()->default(null);
             $table->smallInteger('total_logins')->default(0)->unsigned();
             $table->integer('role_id')->unsigned();
         });

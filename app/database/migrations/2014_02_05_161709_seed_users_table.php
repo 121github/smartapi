@@ -12,7 +12,7 @@ class SeedUsersTable extends Migration {
 	 */
 	public function up()
 	{
-        $now = new Datetime();
+        $now = date('Y-m-d H:i:s');
 		DB::table('users')->insert(array(
             array(
                 'first_name' => 'Stuart',

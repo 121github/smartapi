@@ -12,7 +12,12 @@ class SeedPermissionsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		DB::table('permissions')->insert(array(
+            array(
+                'permission'  => 'view_users',
+                'description' => 'Required to view system users'
+            )
+        ));
 	}
 
 	/**
@@ -22,7 +27,7 @@ class SeedPermissionsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		DB::table('permissions')->delete();
 	}
 
 }

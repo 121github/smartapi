@@ -14,7 +14,7 @@ class CreateTablePermissions extends Migration {
 	{
         Schema::create('permissions', function($table) {
             $table->increments('id');
-            $table->string('name', 45);
+            $table->string('permission', 45);
             $table->string('description', 255);
         });
 	}

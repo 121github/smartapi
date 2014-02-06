@@ -12,7 +12,12 @@ class SeedRolePermissionsTable extends Migration {
 	 */
 	public function up()
 	{
-		//
+		DB::table('role_permissions')->insert(array(
+            array(
+                'role_id'       => 2, // Admin
+                'permission_id' => 1 // view_users
+            )
+        ));
 	}
 
 	/**
@@ -22,7 +27,7 @@ class SeedRolePermissionsTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		DB::table('role_permissions')->delete();
 	}
 
 }
