@@ -14,6 +14,10 @@ class SeedPermissionsTable extends Migration {
 	{
 		DB::table('permissions')->insert(array(
             array(
+                'permission'  => 'view_dashboard',
+                'description' => 'Required to view the dashboard. As this is the entry point for the application every user must be assigned this permission'
+            ),
+            array(
                 'permission'  => 'view_users',
                 'description' => 'Required to view system users'
             )

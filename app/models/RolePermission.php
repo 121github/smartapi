@@ -9,12 +9,12 @@ class RolePermission extends Eloquent {
     
     public function role()
     {
-        return $this->belongsTo('Role');
+        return $this->belongsTo('Role', 'role_id');
     }
     
     public function permission()
     {
-        return $this->belongsTo('permission');
+        return $this->belongsTo('Permission', 'permission_id');
     }
     
 }

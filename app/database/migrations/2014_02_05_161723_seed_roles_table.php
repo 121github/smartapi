@@ -14,7 +14,7 @@ class SeedRolesTable extends Migration {
 	{
 		DB::table('roles')->insert(array(
             array(
-                'role'        => 'Prospector',
+                'role'        => 'User',
                 'description' => 'Basic access rights only'
             ),
             array(

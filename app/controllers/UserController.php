@@ -15,15 +15,15 @@ class UserController extends BaseController {
      * @return User
      */
     public function getLogin($username = null, $password = null) 
-    {
+    {        
         if (Auth::attempt(array('username' => $username, 'password' => $password))) {
             $user = Auth::user();
             $user->total_logins += 1;
             $user->last_login_at = date('Y-m-d H:i:s');
             $user->save();
             $permissions = array();
-            foreach (Role::find($user->role_id)->permissions as $permission) {
-                $permissions[] = $permission['permission'];
+            foreach (RolePermission::where('role_id', 2)->with('permission')->get() as $rolePermission) {
+                $permissions[] = $rolePermission['permission']['permission'];
             }
             $user->permissions = $permissions;
             return $user;

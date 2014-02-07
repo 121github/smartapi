@@ -17,9 +17,4 @@ class Role extends Eloquent {
         return $this->hasMany('RolePermission');
     }
     
-    public function permissions()
-    {
-        return $this->hasManyThrough('Permission', 'RolePermission', 'role_id', 'id');
-    }
-    
 }
