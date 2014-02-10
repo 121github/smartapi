@@ -78,3 +78,10 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+/*
+ * Register our custom filters!
+ * 
+ * @author stuartw
+ */
+Route::filter('role', 'RoleFilter');

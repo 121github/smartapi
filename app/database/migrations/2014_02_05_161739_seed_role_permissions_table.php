@@ -16,16 +16,64 @@ class SeedRolePermissionsTable extends Migration {
             // User
             array(
                 'role_id'       => 1,
-                'permission_id' => 1 // view_dashboard
+                'permission_id' => 1
+            ),
+            array(
+                'role_id'       => 1,
+                'permission_id' => 2
+            ),
+            array(
+                'role_id'       => 1,
+                'permission_id' => 3
+            ),
+            array(
+                'role_id'       => 1,
+                'permission_id' => 4
+            ),
+            array(
+                'role_id'       => 1,
+                'permission_id' => 5
+            ),
+            array(
+                'role_id'       => 1,
+                'permission_id' => 6
             ),
             // Admin
             array(
                 'role_id'       => 2, 
-                'permission_id' => 1 // view_dashboard
+                'permission_id' => 1
             ),
             array(
-                'role_id'       => 2, // Admin
-                'permission_id' => 2 // view_users
+                'role_id'       => 2,
+                'permission_id' => 2
+            ),
+            array(
+                'role_id'       => 2,
+                'permission_id' => 3
+            ),
+            array(
+                'role_id'       => 2,
+                'permission_id' => 4
+            ),
+            array(
+                'role_id'       => 2,
+                'permission_id' => 5
+            ),
+            array(
+                'role_id'       => 2,
+                'permission_id' => 6
+            ),
+            array(
+                'role_id'       => 2,
+                'permission_id' => 7
+            ),
+            array(
+                'role_id'       => 2,
+                'permission_id' => 8
+            ),
+            array(
+                'role_id'       => 2,
+                'permission_id' => 9
             )
         ));
 	}

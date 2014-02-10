@@ -3,6 +3,22 @@
 class UserController extends BaseController {
     
     /**
+     * Instantiate a new UserController instance.
+     */
+    public function __construct()
+    {
+        $this->beforeFilter(
+            function () {
+                if(!Auth::check()) {
+                    return Response::make('Unauthorised', 401);
+                }
+            }, 
+            array('except' => 'getLogin')
+        );
+        $this->beforeFilter('role');
+    }
+    
+    /**
      * getLogin method
      * 
      * Attempt to authenticate the user. On login success:
@@ -22,7 +38,7 @@ class UserController extends BaseController {
             $user->last_login_at = date('Y-m-d H:i:s');
             $user->save();
             $permissions = array();
-            foreach (RolePermission::where('role_id', 2)->with('permission')->get() as $rolePermission) {
+            foreach (RolePermission::where('role_id', $user->role_id)->with('permission')->get() as $rolePermission) {
                 $permissions[] = $rolePermission['permission']['permission'];
             }
             $user->permissions = $permissions;
@@ -34,6 +50,11 @@ class UserController extends BaseController {
     public function postLogout()
     {
         Auth::logout();
+    }
+    
+    public function getAll()
+    {
+        return User::all();
     }
     
     public function missingMethod($parameters = array())
