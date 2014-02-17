@@ -16,3 +16,4 @@ Route::get('/', function()
 });
 
 Route::controller('user', 'UserController');
+Route::controller('role', 'RoleController');

@@ -54,7 +54,13 @@ class UserController extends BaseController {
     
     public function getAll()
     {
-        return User::all();
+        $users = User::with('role')->get();
+        foreach ($users as &$user) {
+            $role = $user->role->role;
+            unset($user->role);
+            $user->role = $role;
+        }
+        return $users;
     }
     
     public function missingMethod($parameters = array())
