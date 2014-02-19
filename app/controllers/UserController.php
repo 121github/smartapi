@@ -63,6 +63,24 @@ class UserController extends BaseController {
         return $users;
     }
     
+    public function postCreate()
+    {
+        $validator = Validator::make(Input::all(), User::$rules);
+        if ($validator->fails()) {
+            return Response::make($validator->messages()->first(), 400);
+        }
+        
+        $user = new User;
+        $user->first_name = Input::get('first_name');
+        $user->last_name  = Input::get('last_name');
+        $user->username   = Input::get('username');
+        $user->role_id    = Input::get('role_id');
+        $user->email      = Input::get('email');
+        $user->password   = Hash::make(substr(md5(rand()), 0, 8));
+        $user->save();
+        return $user;
+    }
+    
     public function missingMethod($parameters = array())
     {
         return Response::make('Invalid request method', 400);

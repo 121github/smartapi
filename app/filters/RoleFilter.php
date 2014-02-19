@@ -13,7 +13,8 @@ class RoleFilter {
      * permission that protects it
      */
     private $_routeActionPermissions = array(
-        'UserController@getAll' => 'access_users'
+        'UserController@getAll' => 'access_users',
+        'UserController@postCreate' => 'create_user'
     );
     
     public function filter()
