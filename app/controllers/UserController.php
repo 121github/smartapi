@@ -78,6 +78,18 @@ class UserController extends BaseController {
         $user->email      = Input::get('email');
         $user->password   = Hash::make(substr(md5(rand()), 0, 8));
         $user->save();
+        
+        $mailData = array(
+            'address'  => 'stutest1@localhost', //$user->email,
+            'name'     => $user->first_name . ' ' . $user->last_name,
+            'password' => $user->password
+        );
+        
+        Mail::send('emails.welcome', $mailData, function($message) use($mailData)
+        {
+            $message->to($mailData['address'], $mailData['name'])->subject('Welcome!');
+        });
+        
         return $user;
     }
     
