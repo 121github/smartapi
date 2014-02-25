@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableRolePermissions extends Migration {
+class CreateTableEmailTypes extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,9 @@ class CreateTableRolePermissions extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('role_permissions', function($table) {
+		Schema::create('email_types', function($table) {
             $table->increments('id');
-            $table->integer('role_id')->unsigned();
-            $table->integer('permission_id')->unsigned();
+            $table->string('name',50);
         });
 	}
 
@@ -26,7 +25,9 @@ class CreateTableRolePermissions extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('role_permissions');
+		Schema::drop('email_types');
 	}
 
 }
+?>
+?>
