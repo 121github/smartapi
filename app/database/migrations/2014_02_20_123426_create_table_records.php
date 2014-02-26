@@ -19,8 +19,8 @@ class CreateTableRecords extends Migration {
             $table->dateTime('next_action')->nullable();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('record_state_id')->references('id')->on('record_states')->onDelete('set null');
-            $table->foreign('last_outcome_id')->references('id')->on('outcomes')->onDelete('set null');
+            $table->foreign('record_state_id')->references('id')->on('record_states')->onDelete('set null')->onUpdate('no action');
+            $table->foreign('last_outcome_id')->references('id')->on('outcomes')->onDelete('set null')->onUpdate('no action');;
         });
 	}
 

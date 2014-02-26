@@ -19,9 +19,9 @@ class CreateTableLogs extends Migration {
               $table->integer('user_id')->unsigned();
               $table->string('change_table',20);
               $table->timestamp('timestamp');
-              $table->foreign('action_id')->references('id')->on('actions')->onDelete('cascade'); 
-              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
-              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+              $table->foreign('action_id')->references('id')->on('actions')->onDelete('cascade')->onUpdate('no action');; 
+              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');;
+              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

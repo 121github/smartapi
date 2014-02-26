@@ -17,8 +17,8 @@ class CreateTableContactTels extends Migration {
               $table->integer('contact_id')->unsigned();;
               $table->tinyInteger('ctps')->default('0');
               $table->string('tel', 20);
-              $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade');
-              $table->foreign('tel_type_id')->references('id')->on('tel_types')->onDelete('cascade');
+              $table->foreign('contact_id')->references('id')->on('contacts')->onDelete('cascade')->onUpdate('no action');;
+              $table->foreign('tel_type_id')->references('id')->on('tel_types')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

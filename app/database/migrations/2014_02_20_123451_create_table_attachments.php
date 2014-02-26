@@ -18,7 +18,7 @@ class CreateTableAttachments extends Migration {
               $table->string('filename',255);
               $table->string('filepath',255);           
               $table->softDeletes();
-              $table->foreign('email_id')->references('id')->on('emails')->onDelete('cascade');
+              $table->foreign('email_id')->references('id')->on('emails')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

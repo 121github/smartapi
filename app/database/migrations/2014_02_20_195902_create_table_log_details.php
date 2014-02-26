@@ -18,7 +18,7 @@ class CreateTableLogDetails extends Migration {
               $table->string('change_field',50);
               $table->string('old_val',255);
               $table->string('new_val',255);
-              $table->foreign('log_id')->references('id')->on('logs')->onDelete('cascade');
+              $table->foreign('log_id')->references('id')->on('logs')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

@@ -24,8 +24,8 @@ class CreateTableCompanies extends Migration {
               $table->integer('company_number')->nullable();
               $table->string('linkedin',255);
               $table->string('logo',255);
-              $table->foreign('company_state_id')->references('id')->on('company_states')->onDelete('set null');
-              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
+              $table->foreign('company_state_id')->references('id')->on('company_states')->onDelete('set null')->onUpdate('no action');;
+              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

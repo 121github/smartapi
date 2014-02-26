@@ -21,8 +21,8 @@ class CreateTableUploads extends Migration {
                $table->integer('upload_type_id')->unsigned()->nullable();
                $table->timestamps();
                $table->softDeletes();
-               $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
-               $table->foreign('upload_type_id')->references('id')->on('upload_types')->onDelete('set null');
+               $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');;
+               $table->foreign('upload_type_id')->references('id')->on('upload_types')->onDelete('set null')->onUpdate('no action');;
             });
   }
 

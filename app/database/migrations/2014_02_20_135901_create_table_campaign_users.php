@@ -16,8 +16,8 @@ class CreateTableCampaignUsers extends Migration {
               $table->integer('user_id')->unsigned();
               $table->integer('campaign_id')->unsigned();
               $table->unique(array('user_id', 'campaign_id'));
-              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-              $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
+              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('no action');;
+              $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

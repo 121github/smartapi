@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
     $this->call('RecordTableSeeder');
     $this->command->info('Record table seeded!');
+    $this->call('PostcodeTableSeeder');
+    $this->command->info('Postcodes generated!');
     $this->call('CompanyTableSeeder');
     $this->command->info('Company table seeded!');
     $this->call('ContactTableSeeder');

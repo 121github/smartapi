@@ -25,7 +25,7 @@ class CreateTableContacts extends Migration {
              $table->string('image',255);
              $table->timestamps();
              $table->softDeletes();
-             $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
+             $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

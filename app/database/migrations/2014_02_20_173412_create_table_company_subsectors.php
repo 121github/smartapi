@@ -15,8 +15,8 @@ class CreateTableCompanySubsectors extends Migration {
 		Schema::create('company_subsectors', function($table) {
             $table->integer('company_id')->unsigned();
             $table->integer('subsector_id')->unsigned();
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
-            $table->foreign('subsector_id')->references('id')->on('subsectors')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade')->onUpdate('no action');;
+            $table->foreign('subsector_id')->references('id')->on('subsectors')->onDelete('cascade')->onUpdate('no action');;
             $table->index(array('company_id', 'subsector_id'));
         });
 	}

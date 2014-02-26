@@ -6,8 +6,9 @@ class ContactTelsTableSeeder extends Seeder {
 
     
 $faker = Faker\Factory::create();
- 
-for ($i = 1; $i < 101; $i++)
+ DB::statement('delete from contact_tels');
+ DB::statement('ALTER TABLE contact_tels AUTO_INCREMENT = 1');
+for ($i = 1; $i < 10001; $i++)
 {
   DB::table('contact_tels')->insert(array(
     'tel_type_id' => 1,

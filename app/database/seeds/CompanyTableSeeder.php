@@ -6,8 +6,9 @@ class CompanyTableSeeder extends Seeder {
 
     
 $faker = Faker\Factory::create();
- 
-for ($i = 1; $i < 101; $i++)
+  DB::statement('delete from companies');
+ DB::statement('ALTER TABLE companies AUTO_INCREMENT = 1');
+for ($i = 1; $i < 10001; $i++)
 {
   DB::table('companies')->insert(array(
     'record_id' => $i,

@@ -16,7 +16,7 @@ class CreateTableCampaignRecords extends Migration {
               $table->integer('campaign_id')->unsigned();
               $table->integer('record_id')->unsigned();
               $table->unique(array('record_id', 'campaign_id'));
-              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
+              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');
               $table->foreign('campaign_id')->references('id')->on('campaigns')->onDelete('cascade');
             });
   }

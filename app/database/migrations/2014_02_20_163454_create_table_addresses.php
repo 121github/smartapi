@@ -24,7 +24,7 @@ class CreateTableAddresses extends Migration {
             $table->integer('company_id')->unsigned();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade')->onUpdate('no action');;
         });
 	}
 

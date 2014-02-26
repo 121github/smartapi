@@ -22,8 +22,8 @@ class CreateTableAppointments extends Migration {
             $table->integer('user_id')->nullable()->unsigned();
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('no action');
         });
 	}
 

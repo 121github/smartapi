@@ -16,8 +16,8 @@ class CreateTableUserRecords extends Migration {
               $table->integer('user_id')->unsigned();
               $table->integer('record_id')->unsigned();
               $table->unique(array('user_id', 'record_id'));
-              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
+              $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('no action');;
+              $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');;
             });
   }
 

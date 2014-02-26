@@ -19,8 +19,8 @@ class CreateTablePlanner extends Migration {
             $table->dateTime('date');
             $table->timestamps();
             $table->softDeletes();
-            $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('record_id')->references('id')->on('records')->onDelete('cascade')->onUpdate('no action');;
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('no action');;
         });
 	}
 

@@ -15,8 +15,8 @@ class CreateTableAttendees extends Migration {
       $table->integer('appointment_id')->unsigned();
       $table->integer('user_id')->unsigned();
       $table->index(array('appointment_id', 'user_id'));
-      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-      $table->foreign('appointment_id')->references('id')->on('appointments')->onDelete('cascade');
+      $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('no action');;
+      $table->foreign('appointment_id')->references('id')->on('appointments')->onDelete('cascade')->onUpdate('no action');;
       });
   }
 
