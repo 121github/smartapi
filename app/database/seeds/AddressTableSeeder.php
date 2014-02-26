@@ -16,7 +16,6 @@ for ($i = 1; $i < 10001; $i++)
     'address_3' => $faker->lastName." ".$faker->citySuffix,
       'county'=> $faker->city,
       'country' => "United Kingdom",
-      'postcode' => "(select postcode from rdm_postcodes where id=$i)",
       'created_at' => date('Y-m-d H:i:s'),
       'company_id' => $i
   ));

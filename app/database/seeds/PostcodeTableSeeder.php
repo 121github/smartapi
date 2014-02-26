@@ -10016,7 +10016,7 @@ class PostcodeTableSeeder extends Seeder {
 (9999, 'PL3 5JR'),
 (10000, 'PO33 3JX')");
 
-
+ DB::statement('update addresses a set postcode = (select postcode from rdm_postcodes p where p.id=a.id)');
   }
 }
 ?>
