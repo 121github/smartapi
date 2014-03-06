@@ -16,7 +16,6 @@ class CreateTableLocations extends Migration {
               $table->string('postcode',10)->unique();
               $table->string('lat',10);
               $table->string('lng',10);
-              $table->string('town',50);
             });
   }
 

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableEmailTypes extends Migration {
+class CreateTableRecordTypes extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,19 @@ class CreateTableEmailTypes extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('email_types', function($table) {
+        Schema::create('record_types', function($table) {
             $table->increments('id');
             $table->string('name')->unique();
         });
+        
+        DB::table('record_types')->insert(array(
+            array(
+                'name'        => 'Company',
+            ),
+            array(
+                'name'        => 'Contact',
+            )
+        ));
 	}
 
 	/**
@@ -25,9 +34,9 @@ class CreateTableEmailTypes extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('email_types');
+		Schema::drop('record_types');
 	}
 
 }
-?>
-?>
+
+

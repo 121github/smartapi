@@ -14,7 +14,8 @@ class CreateTableRecords extends Migration {
 	{
 		Schema::create('records', function($table) {
             $table->increments('id');
-            $table->integer('record_state_id')->unsigned()->nullable()->default(1);;
+            $table->integer('record_state_id')->unsigned()->nullable()->default(1);
+            $table->integer('record_type_id')->unsigned()->nullable()->default(1);
             $table->integer('last_outcome_id')->unsigned()->nullable()->default(null);
             $table->dateTime('next_action')->nullable();
             $table->timestamps();

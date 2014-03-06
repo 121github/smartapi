@@ -13,7 +13,7 @@ class CreateTableTelTypes extends Migration {
   public function up() {
     Schema::create('tel_types', function($table) {
               $table->increments('id');
-              $table->string('type',50);
+              $table->string('type',50)->unique();
             });
   }
 

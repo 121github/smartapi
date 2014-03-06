@@ -13,7 +13,7 @@ class CreateTableRecordStates extends Migration {
   public function up() {
     Schema::create('record_states', function($table) {
               $table->increments('id');
-              $table->string('state',20);
+              $table->string('state',20)->unique();
             });
   }
 

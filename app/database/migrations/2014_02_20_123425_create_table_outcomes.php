@@ -13,7 +13,7 @@ class CreateTableOutcomes extends Migration {
   public function up() {
     Schema::create('outcomes', function($table) {
               $table->increments('id');
-              $table->string('name');
+              $table->string('name')->unique();
               $table->string('description');
               $table->integer('email_id')->nullable()->default(null)->unsigned();
               $table->integer('record_state_id')->nullable()->default(null)->unsigned();

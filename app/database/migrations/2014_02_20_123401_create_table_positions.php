@@ -13,7 +13,7 @@ class CreateTablePositions extends Migration {
   public function up() {
     Schema::create('positions', function($table) {
               $table->increments('id');
-              $table->string('name',50);
+              $table->string('name')->unique();
               $table->integer('rank');
             });
   }

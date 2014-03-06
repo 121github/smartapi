@@ -13,8 +13,8 @@ class CreateTableCampaigns extends Migration {
   public function up() {
     Schema::create('campaigns', function($table) {
               $table->increments('id');
-              $table->string('name',20);
-              $table->string('description',255);
+              $table->string('name',20)->unique();
+              $table->string('description');
              $table->timestamps();
              $table->softDeletes();
             });

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableContacts extends Migration {
+class CreateTableCompanyContacts extends Migration {
 
   /**
    * Run the migrations.
@@ -11,7 +11,7 @@ class CreateTableContacts extends Migration {
    * @return void
    */
   public function up() {
-    Schema::create('contacts', function($table) {
+    Schema::create('company_contacts', function($table) {
               $table->increments('id');
               $table->integer('record_id')->unsigned();
               $table->string('title',20);
@@ -35,7 +35,7 @@ class CreateTableContacts extends Migration {
    * @return void
    */
   public function down() {
-    Schema::drop('contacts');
+    Schema::drop('company_contacts');
   }
 
 }

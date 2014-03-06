@@ -13,7 +13,7 @@ class CreateTableSectors extends Migration {
   public function up() {
     Schema::create('sectors', function($table) {
               $table->increments('id');
-              $table->string('name',150);
+              $table->string('name')->unique();
             });
   }
 
